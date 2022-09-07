@@ -5,7 +5,7 @@
 
 'git clone httpshttps://github.com/BurakGenc/RecapProject'
 
-##Usage
+## Usage
 Projeyi cloneladıktan sonra Visual Studio programında açınız.
 
 
