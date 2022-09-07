@@ -1,6 +1,6 @@
 # ETicaretAPI
 
-##Installation
+## Installation
 Öncelikle projeyi clonelayın.
 
 `git clone httpshttps://github.com/BurakGenc/RecapProject`
