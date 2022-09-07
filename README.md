@@ -3,7 +3,7 @@
 ##Installation
 Öncelikle projeyi clonelayın.
 
-'git clone httpshttps://github.com/BurakGenc/RecapProject'
+`git clone httpshttps://github.com/BurakGenc/RecapProject`
 
 ## Usage
 Projeyi cloneladıktan sonra Visual Studio programında açınız.
