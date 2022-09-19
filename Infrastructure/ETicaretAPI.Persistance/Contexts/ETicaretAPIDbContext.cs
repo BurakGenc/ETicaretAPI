@@ -22,20 +22,18 @@ namespace ETicaretAPI.Persistance.Contexts
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
-           var datas=  ChangeTracker.Entries<BaseEntity>();
-            foreach(var item in datas)
-            {
-                if (item.State == EntityState.Added)
-                {
-                    item.Entity.CreatedTime = DateTime.UtcNow;
-                }
-                else if(item.State == EntityState.Modified)
-                {
-                    item.Entity.UpdateDate = DateTime.UtcNow;
-                }
-               
-            }
+            var datas = ChangeTracker
+                     .Entries<BaseEntity>();
 
+            foreach (var data in datas)
+            {
+                _ = data.State switch
+                {
+                    EntityState.Added => data.Entity.CreatedTime = DateTime.UtcNow,
+                    EntityState.Modified => data.Entity.UpdateDate = DateTime.UtcNow,
+                    _=>DateTime.UtcNow
+                };
+            }
             return await base.SaveChangesAsync(cancellationToken);
         }
 

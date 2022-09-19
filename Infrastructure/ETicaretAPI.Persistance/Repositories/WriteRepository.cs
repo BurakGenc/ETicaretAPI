@@ -38,7 +38,7 @@ namespace ETicaretAPI.Persistance.Repositories
 
         public bool Remove(T entity)
         {
-           var entityEntry= Table.Remove(entity);
+            EntityEntry<T> entityEntry = Table.Remove(entity);
 
             return entityEntry.State == EntityState.Deleted;
         }
@@ -51,7 +51,7 @@ namespace ETicaretAPI.Persistance.Repositories
 
         public async Task<bool> RemoveAsync(string id)
         {
-             T model =await Table.FirstOrDefaultAsync(x => x.Id == Guid.Parse(id));
+            T model = await Table.FirstOrDefaultAsync(data => data.Id == Guid.Parse(id));
             return Remove(model);
         }
 
